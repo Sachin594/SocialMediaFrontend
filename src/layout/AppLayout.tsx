@@ -6,7 +6,7 @@ import { Header } from "antd/es/layout/layout";
 
 const AppLayout = () => {
   const {
-    token: { cyan2 },
+    token: { cyan2, cyan4 },
   } = theme.useToken();
 
   const TabsList = [
@@ -23,14 +23,33 @@ const AppLayout = () => {
   ];
 
   return (
-    <Layout style={{ background: cyan2 }}>
-      <Header>{/* <div>kullllllllllll</div> */}</Header>
+    <div style={{ background: cyan2, padding: "10px" }}>
       <Layout>
-        <Sider>
-          <Menu items={TabsList} />
-        </Sider>
+        <Header style={{ background: cyan4 }}>
+          {/* <div>kullllllllllll</div> */}
+        </Header>
+        <Layout>
+          <Sider
+            style={{ background: cyan4 }}
+            breakpoint="lg"
+            collapsedWidth="0"
+            onBreakpoint={(broken) => {
+              console.log(broken);
+            }}
+            onCollapse={(collapsed, type) => {
+              console.log(collapsed, type);
+            }}
+          >
+            <Menu
+              theme="dark"
+              mode="inline"
+              defaultSelectedKeys={["4"]}
+              items={TabsList}
+            />
+          </Sider>
+        </Layout>
       </Layout>
-    </Layout>
+    </div>
   );
 };
 
