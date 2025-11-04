@@ -4,6 +4,7 @@ import bgImage from "../assets/blueBg.jpg";
 import logo from "../assets/logo.png";
 import { useBreakpointWidth } from "../hooks/useBreakpoint";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import GlobalSearchInputForm from "../components/GlobalSearchInputForm";
 
 const { Header, Sider, Content } = Layout;
 
@@ -71,7 +72,15 @@ const AppLayout = () => {
             />
           </Col>
 
-          <Col></Col>
+          <Col>
+            <GlobalSearchInputForm
+              style={{
+                width: 200,
+                // backgroundColor: "rgba(255, 255, 255, 0.2)",
+                borderRadius: 8,
+              }}
+            />
+          </Col>
         </Row>
       </Header>
       {/* ===== Main Layout ===== */}
